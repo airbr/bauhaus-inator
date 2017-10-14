@@ -1,0 +1,22 @@
+{
+  "name": "bauhaus-inator",
+  "version": "1.0.0",
+  "description": "A modern UI take on a classic poster design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Test\";"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airbr/bauhaus-inator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airbr/bauhaus-inator/issues"
+  },
+  "homepage": "https://github.com/airbr/bauhaus-inator#readme",
+  "devDependencies": {
+    "vue": "^2.5.2"
+  }
+}
