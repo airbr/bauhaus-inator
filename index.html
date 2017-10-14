@@ -13,7 +13,7 @@ box-shadow: 4px 10px 19px 0px rgba(0,0,0,0.75);"><a href="http://sullivanlehdesi
 
 <div class="wrapper">
 
-<div class="layout">
+<div id="layout" class="layout">
 <div class="bio-image">
 	<img style="width: 123px;" src="./herbert bayer layout_files/portrait.jpg" alt="portrait">
 </div>
@@ -21,42 +21,41 @@ box-shadow: 4px 10px 19px 0px rgba(0,0,0,0.75);"><a href="http://sullivanlehdesi
 <div class="company">
 	<div class="red-line"></div>
 	<div class="content">
-	  <h3 class="who">Who</h3>
+	  <h3 class="who"> {{ who }}</h3>
 	  <p>invites you to...</p>
     </div>
 </div>
 
-
 <div class="topic">
 	<div class="red-line"></div>	
-	<h4>A event</h4>
+	<h4 class="description"> {{description}}</h4>
 </div>
 
-<h1 class="title">Title</h1>
+<h1 class="title"> {{title}}</h1>
 
-<h2 class="what">What</h2>
+<h2 class="what">{{what}}</h2>
 
 <div class="years">
-	<p class="number">123</p>
-	<p class="word">Location?</p>
+	<p class="number">{{number}}</p>
+	<p class="word">{{word}}</p>
 </div>
 
 <div class="table-layout">
 	<table>
   <tbody>
   <tr>
-    <td rowspan="2">Room # </td>
-    <td>The Name of Building</td>
+    <td rowspan="2">{{address1}} </td>
+    <td>{{address2}} </td>
   </tr>
   <tr>
-    <td>Address</td>
+    <td>{{address3}} </td>
   </tr>
   <tr>
-    <td rowspan="2">Contact:</td>
-    <td>Email</td>
+    <td rowspan="2">{{contact1}} </td>
+    <td>{{contact2}} </td>
   </tr>
   <tr>
-    <td>Website</td>
+    <td>{{contact3}} </td>
   </tr>
 </tbody></table>
 	
@@ -64,6 +63,7 @@ box-shadow: 4px 10px 19px 0px rgba(0,0,0,0.75);"><a href="http://sullivanlehdesi
 
 </div>
 </div>
-
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./bauhaus-vue-component.js"></script>
 
 </body></html>
