@@ -4,7 +4,7 @@
   "description": "A modern UI take on a classic poster design",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Test\";"
+    "test": "standard"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/airbr/bauhaus-inator#readme",
   "devDependencies": {
+    "standard": "^10.0.3",
     "vue": "^2.5.2"
   }
 }
