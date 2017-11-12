@@ -10,7 +10,7 @@
 	<!-- <div style="z-index:11;position:absolute; top:0; right:0;-webkit-box-shadow: 4px 10px 19px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 4px 10px 19px 0px rgba(0,0,0,0.75);
 box-shadow: 4px 10px 19px 0px rgba(0,0,0,0.75);"><a href="http://sullivanlehdesigns.com/design_play/web-experiment-with-grid/" style="padding:.8rem; font-size:.8rem;">&lt; Back to page</a></div> -->
-
+<div v-cloak v-on:click="hideTooltip" >
 <div class="wrapper">
 
 <div id="layout" class="layout">
@@ -31,7 +31,39 @@ box-shadow: 4px 10px 19px 0px rgba(0,0,0,0.75);"><a href="http://sullivanlehdesi
 	<h4 class="description"> {{description}}</h4>
 </div>
 
-<h1 class="title"> {{title}}</h1>
+<h1 class="title" v-on:click.stop="toggleTooltip"> {{title}}</h1>
+
+<!-- v-cloak hides any un-compiled data bindings until the Vue instance is ready. -->
+<!-- When the element is clicked the hideTooltp() method is called. -->
+
+  
+      <!-- This is the tooltip. 
+           v-on:clock.stop is an event handler for clicks, with a modifier that stops event propagation.
+           v-if makes sure the tooltip is shown only when the "showtooltip" variable is truthful -->
+  
+      <div class="tooltip" v-on:click.stop v-if="show_tooltip">
+          <!-- v-model binds the contents of the text field with the "text_content" model.
+           Any changes to the text field will automatically update the value, and
+           all other bindings on the page that depend on it.  -->
+          <input type="text" v-model="text_content" />
+      </div>
+
+      <div class="tooltip" v-on:click.stop v-if="show_tooltip">
+        <!-- v-model binds the contents of the text field with the "text_content" model.
+         Any changes to the text field will automatically update the value, and
+         all other bindings on the page that depend on it.  -->
+        <input type="text" v-model="title" />
+    </div>
+  
+      <!-- When the paragraph is clicked, call the "toggleTooltip" method and stop event propagation. -->
+  
+      <!-- The mustache expression will be replaced with the value of "text_content".
+           It will automatically update to reflect any changes to that variable. -->
+  
+      <p v-on:click.stop="toggleTooltip">{{text_content}}</p>
+  
+
+
 
 <h2 class="what">{{what}}</h2>
 
@@ -61,6 +93,7 @@ box-shadow: 4px 10px 19px 0px rgba(0,0,0,0.75);"><a href="http://sullivanlehdesi
 	
 </div>
 
+</div>
 </div>
 </div>
 <script src="./node_modules/vue/dist/vue.js"></script>
